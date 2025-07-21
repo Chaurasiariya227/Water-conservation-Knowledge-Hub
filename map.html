@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Water Projects Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #map {
+      height: 600px;
+      width: 100%;
+      margin-top: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .map-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .map-container h2 {
+      text-align: center;
+      color: #5f13ee;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Water Conservation Projects Map</h1>
+  </header>
+
+  <div class="map-container">
+    <h2>Know about ongoing Water-Saving Projects in different states with the expenditure on them</h2>
+    <div id="map"></div>
+  </div>
+
+  <footer>
+    <p>© 2024 Water Conservation</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  const map = L.map('map').setView([22.9734, 78.6569], 5);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  const stateProjects = [
+    {
+      name: "Andaman and Nicobar Islands",
+      coords: [11.7401, 92.6586],
+      works2021: 71,
+      exp2018: 22.9
+    },
+    {
+      name: "Andhra Pradesh",
+      coords: [15.9129, 79.7400],
+      works2021: 59369,
+      exp2018: 76079.94
+    },
+    {
+      name: "Arunachal Pradesh",
+      coords: [28.2180, 94.7278],
+      works2021: 186,
+      exp2018: 934.29
+    },
+    {
+      name: "Assam",
+      coords: [26.2006, 92.9376],
+      works2021: 22790,
+      exp2018: 9099.08
+    },
+    {
+      name: "Bihar",
+      coords: [25.0961, 85.3131],
+      works2021: 87868,
+      exp2018: 18532.07
+    },
+    {
+      name: "Chhattisgarh",
+      coords: [21.2787, 81.8661],
+      works2021: 44891,
+      exp2018: 56610.96
+    },
+    {
+      name: "Goa",
+      coords: [15.2993, 74.1240],
+      works2021: 55,
+      exp2018: 0
+    },
+    {
+      name: "Gujarat",
+      coords: [22.2587, 71.1924],
+      works2021: 21926,
+      exp2018: 19061.09
+    },
+    {
+      name: "Haryana",
+      coords: [29.0588, 76.0856],
+      works2021: 2425,
+      exp2018: 5427.89
+    },
+    {
+      name: "Himachal Pradesh",
+      coords: [31.1048, 77.1734],
+      works2021: 11443,
+      exp2018: 9232.16
+    }
+  ];
+
+  // Add markers to the map
+  stateProjects.forEach(state => {
+    L.marker(state.coords)
+      .addTo(map)
+      .bindPopup(`
+        <strong>${state.name}</strong><br>
+        🛠️ <b>Works (2021-22)</b>: ${state.works2021.toLocaleString()}<br>
+        💰 <b>Expenditure (2018-19)</b>: ₹${state.exp2018.toLocaleString()} lakh
+      `);
+  });
+</script>
+
+</body>
+</html>

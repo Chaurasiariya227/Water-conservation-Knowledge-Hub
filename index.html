@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Conservation Knowledge Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="scroll-strip">
+      <p>Water Conservation Knowledge Hub</p>
+    </div>
+    <nav>
+      <ul class="navbar">
+        <div class="nav-left">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="forum.html">Community Forum</a></li>
+          <li><a href="map.html">Map</a></li>
+          <li><a href="tracker.html">Usage Tracker</a></li>
+          <li><a href="board.html">Leaderboard</a></li>
+          <li><a href="ngos.html">NGOs & Schemes</a></li>
+        </div>
+        <div class="nav-right">
+          <li><button id="loginBtn" class="login-btn">Login</button></li>
+        </div>
+      </ul>
+    </nav>
+  </header>
+<!-- Login/Signup Modal -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 id="modal-title">Login</h2>
+
+    <form id="authForm">
+      <label for="username">Email or Username:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit" id="authButton">Login</button>
+
+      <p class="toggle-text">Don't have an account? <a href="#" id="toggleMode">Sign up</a></p>
+    </form>
+
+    <div class="or-separator"><span>OR</span></div>
+
+    <div class="social-login">
+      <button class="google-btn">Login with Google</button>
+      <button class="yahoo-btn">Login with Yahoo</button>
+    </div>
+  </div>
+</div>
+
+<div class="custom-carousel">
+  <div class="carousel-inner">
+    <img src="images/img1.png" class="carousel-img active" alt="Image 1">
+    <img src="images/img2.png" class="carousel-img" alt="Image 2">
+    <img src="images/img3.png" class="carousel-img" alt="Image 3">
+    <img src="images/img4.png" class="carousel-img" alt="Image 4">
+    <img src="images/img5.png" class="carousel-img" alt="Image 5">
+  </div>
+
+  <button class="carousel-nav left" onclick="prevSlide()">&#10094;</button>
+  <button class="carousel-nav right" onclick="nextSlide()">&#10095;</button>
+</div>
+
+</div>
+
+
+<div class="page-bg">
+<main>
+  <section id="content-container">
+  <section id="article-list">
+  <h2>Water Efficiency Techniques</h2>
+
+  <article class="article-preview">
+    <h3><a href="https://www.netafimindia.com/drip-irrigation/" target="_blank">Efficient Drip Irrigation Techniques</a></h3>
+    <p>Learn about how drip irrigation can save water and increase crop yield...</p>
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube.com/embed/HEyFQo9RUWQ" 
+        title="Drip Irrigation Video" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </article>
+
+  <article class="article-preview">
+    <h3><a href="https://livetoplant.com/efficient-mulching-techniques-to-retain-soil-moisture/" target="_blank">Using Mulching to Retain Soil Moisture</a></h3>
+    <p>Discover how mulching can help reduce water evaporation from soil...</p>
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube.com/embed/I7DS3T6efLc" 
+        title="Mulching Video" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </article>
+
+  <article class="article-preview">
+    <h3><a href="https://en.wikipedia.org/wiki/Rainwater_harvesting" target="_blank">Rainwater Harvesting Systems</a></h3>
+    <p>Learn how to collect and store rainwater for agricultural and household use...</p>
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube.com/embed/bM6-xhdNSgA" 
+        title="Rainwater Harvesting Video" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </article>
+</section>
+
+    <section id="water-heroes">
+      <h2>Stories of Water Heroes</h2>
+      <article class="article-preview">
+        <h3><a href="https://www.downtoearth.org.in/environment/hiware-bazar--a-village-with-54-millionaires-4039">The Village That Transformed with Rainwater Harvesting</a></h3>
+        <p>Read about how one village’s effort turned a water crisis into an abundant water source...</p>
+      </article>
+      <article class="article-preview">
+        <h3><a href="https://agrinextcon.com/smart-water-management-in-agriculture/">A Farmer's Innovation: Saving Water with Smart Solutions</a></h3>
+        <p>Discover how a farmer developed an ingenious solution to cut water use by half...</p>
+      </article>
+    </section>
+
+    <section id="dashboard">
+      <h2>Your Dashboard</h2>
+      <p>Track your daily water usage, earn badges, and climb the leaderboard!</p>
+      <a href="tracker.html">Log Usage</a> | <a href="leaderboard.html">View Leaderboard</a>
+    </section>
+
+    <section id="interactive-map">
+      <h2>Map of Water Projects</h2>
+      <p>View and add water conservation efforts happening around your area.</p>
+      <a href="map.html">Open Map</a>
+    </section>
+
+    <section id="ngo-section">
+      <h2>Connect with NGOs & Government Schemes</h2>
+      <p>Find local organizations and schemes to help implement your water-saving ideas.</p>
+      <a href="ngos.html">Explore Resources</a>
+    </section>
+  </section>
+</main>
+</div>
+
+<footer>
+  <p>© 2024 Water Conservation</p>
+</footer>
+
+</body>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("loginModal");
+  const loginBtn = document.querySelector(".login-btn"); // Button in navbar
+  const closeBtn = document.querySelector(".close");
+  const toggleLink = document.getElementById("toggleMode");
+  const title = document.getElementById("modal-title");
+  const authBtn = document.getElementById("authButton");
+  let isLogin = true;
+
+  loginBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    modal.style.display = "block";
+  });
+
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+  };
+
+  window.onclick = (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  toggleLink.onclick = (e) => {
+    e.preventDefault();
+    isLogin = !isLogin;
+    title.textContent = isLogin ? "Login to Continue" : "Create Your Account";
+    authBtn.textContent = isLogin ? "Login" : "Sign Up";
+    toggleLink.innerHTML = isLogin
+      ? `Don't have an account? <a href="#" id="toggleMode">Sign up</a>`
+      : `Already have an account? <a href="#" id="toggleMode">Login</a>`;
+    // Re-bind event
+    document.getElementById("toggleMode").onclick = toggleLink.onclick;
+  };
+});
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".carousel-img");
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove("active");
+      if (i === index) {
+        slide.classList.add("active");
+      }
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  // Auto slide every 4 seconds
+  setInterval(nextSlide, 4000);
+
+</script>
+
+</html>

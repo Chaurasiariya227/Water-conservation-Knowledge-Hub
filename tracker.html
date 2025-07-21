@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Usage Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="tracker.css">
+</head>
+<body>
+
+  <header>
+    <h1>Water Usage Tracker</h1>
+    <nav>
+      <ul class="navbar">
+        <div class="nav-left">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="forum.html">Community Forum</a></li>
+          <li><a href="map.html">Map</a></li>
+          <li><a href="tracker.html">Usage Tracker</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="ngos.html">NGOs & Schemes</a></li>
+        </div>
+        <div class="nav-right">
+          <li><a href="login.html" class="login-btn">Login</a></li>
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="tracker-container">
+    <h2>Log Your Daily Water Usage</h2>
+
+    <form id="usageForm">
+      <input type="number" id="litresUsed" placeholder="Litres Used Today" required />
+      <input type="text" id="activity" placeholder="Activity (e.g. bathing, cooking)" required />
+      <button type="submit">Add Entry</button>
+    </form>
+
+    <h3>Your Usage History</h3>
+    <ul id="usageList"></ul>
+
+    <div id="summary">
+      <p><strong>Total Water Used:</strong> <span id="totalUsage">0</span> litres</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2024 Water Conservation</p>
+  </footer>
+
+  <script src="tracker.js"></script>
+</body>
+</html>

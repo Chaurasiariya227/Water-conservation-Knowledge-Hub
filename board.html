@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaderboard - Water Usage</title>
+  <link rel="stylesheet" href="style.css">
+  <style>.leaderboard-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px 20px;
+  background-color: #e0f7fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.leaderboard-container h2 {
+  color: #0077b6;
+  margin-bottom: 25px;
+}
+
+#leaderboard {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#leaderboard th, #leaderboard td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+}
+
+#leaderboard th {
+  background-color: #0077b6;
+  color: #fff;
+}
+
+#leaderboard tbody tr:hover {
+  background-color: #f0faff;
+}
+</style>
+</head>
+<body>
+  <header>
+    <h1>Water Saver Leaderboard</h1>
+    <nav>
+      <ul class="navbar">
+        <div class="nav-left">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="forum.html">Community Forum</a></li>
+          <li><a href="map.html">Map</a></li>
+          <li><a href="tracker.html">Usage Tracker</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="ngos.html">NGOs & Schemes</a></li>
+        </div>
+        <div class="nav-right">
+          <li><a href="login.html" class="login-btn">Login</a></li>
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="leaderboard-container">
+    <h2>Top Water Savers</h2>
+    <table id="leaderboard">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Name</th>
+          <th>Total Saved (Litres)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Leaderboard entries inserted via JS -->
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    <p>© 2024 Water Conservation</p>
+  </footer>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const leaderboardData = [
+    { name: "Aarav Sharma", saved: 1500 },
+    { name: "Diya Patel", saved: 1320 },
+    { name: "Rahul Verma", saved: 1250 },
+    { name: "Sneha Rao", saved: 1140 },
+    { name: "Vikram Singh", saved: 980 }
+  ];
+
+  const tbody = document.querySelector("#leaderboard tbody");
+
+  leaderboardData.forEach((user, index) => {
+    const row = document.createElement("tr");
+
+    let medal = "";
+    if (index === 0) medal = "🥇";
+    else if (index === 1) medal = "🥈";
+    else if (index === 2) medal = "🥉";
+
+    row.innerHTML = `
+      <td><strong>${index + 1}</strong> ${medal}</td>
+      <td><strong>${user.name}</strong></td>
+      <td><span style="color:#0077b6; font-weight:bold;">${user.saved} L</span></td>
+    `;
+    tbody.appendChild(row);
+  });
+});
+
+</script>
+</body>
+</html>

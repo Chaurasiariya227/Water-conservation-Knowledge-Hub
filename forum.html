@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community Forum - Water Conservation</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .forum-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      color: #0077b6;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    form {
+      background-color: #e0f7fa;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    form button {
+      margin-top: 15px;
+      background-color: #0077b6;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    form button:hover {
+      background-color: #0096c7;
+    }
+
+    .post {
+      background-color: #fff;
+      border-left: 5px solid #00b4d8;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .post h4 {
+      color: #023e8a;
+    }
+
+    .post p {
+      margin-top: 8px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Community Forum</h1>
+    <nav>
+      <ul class="navbar">
+        <div class="nav-left">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="forum.html">Community Forum</a></li>
+          <li><a href="map.html">Map</a></li>
+          <li><a href="tracker.html">Usage Tracker</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="ngos.html">NGOs & Schemes</a></li>
+        </div>
+        <div class="nav-right">
+          <li><a href="login.html" class="login-btn">Login</a></li>
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="forum-container">
+    <h2>Share Your Water Conservation Story</h2>
+
+    <form id="postForm">
+      <input type="text" id="username" placeholder="Your Name" required>
+      <textarea id="message" rows="5" placeholder="Describe your experience..." required></textarea>
+      <button type="submit">Post</button>
+    </form>
+
+    <section id="postSection">
+      <!-- User posts will appear here -->
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2024 Water Conservation</p>
+  </footer>
+
+  <script>
+    const postForm = document.getElementById("postForm");
+    const postSection = document.getElementById("postSection");
+
+    postForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("username").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (name && message) {
+        const post = document.createElement("div");
+        post.className = "post";
+        post.innerHTML = `<h4>${name}</h4><p>${message}</p>`;
+
+        postSection.prepend(post); // New posts on top
+
+        // Clear form
+        postForm.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>
